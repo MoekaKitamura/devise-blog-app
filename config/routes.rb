@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'blogs#index'
   
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :blogs
 
   if Rails.env.development?
