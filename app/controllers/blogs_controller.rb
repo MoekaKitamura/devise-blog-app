@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:created_at).page(params[:page])
   end
 
   # GET /blogs/1
